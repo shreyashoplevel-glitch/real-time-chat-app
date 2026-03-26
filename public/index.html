@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Room Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="join-container" class="container">
+        <div class="card">
+            <h1><i class="fas fa-comments"></i> Dark Room</h1>
+            <form id="join-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username..." required>
+                </div>
+                <div class="input-group">
+                    <label for="room">Room Name</label>
+                    <input type="text" id="room" placeholder="Enter room..." required>
+                </div>
+                <button type="submit" class="btn">Join Chat</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="chat-container" class="container hidden">
+        <header class="chat-header">
+            <div class="room-info">
+                <h2><i class="fas fa-door-open"></i> <span id="room-display"></span></h2>
+                <p id="user-count"></p>
+            </div>
+            <button id="leave-btn" class="btn btn-danger">Leave</button>
+        </header>
+
+        <main class="chat-main">
+            <div id="chat-messages"></div>
+            <div id="typing-indicator" class="typing-indicator"></div>
+        </main>
+
+        <footer class="chat-footer">
+            <form id="chat-form">
+                <input type="text" id="msg" placeholder="Type a message..." autocomplete="off" required>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </footer>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
